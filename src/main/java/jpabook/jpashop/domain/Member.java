@@ -10,12 +10,12 @@ import java.util.List;
 
 @Entity
 @Getter @Setter
-public class Member2 {
+public class Member {
 
     //@ID는 primary key @GeneratedValue는 주키를 어떻게 생성할지
     @Id
     @GeneratedValue
-    @Column(name = "member2_id")
+    @Column(name = "member_id")
     private Long id;
 
     private String name;
@@ -23,7 +23,7 @@ public class Member2 {
     @Embedded
     private Address address;
 
-    @OneToMany(mappedBy = "member2")
+    @OneToMany(mappedBy = "member")
     private List<Order> orders = new ArrayList();
 
 }
